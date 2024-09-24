@@ -131,7 +131,7 @@ class TabNetParser(object):
             if is_head:
                 text = self.remove_Bb(text)
             text = "\t".join(text)
-            return f"{bbox}<;>{text}"
+            return f"{bbox}<;>{text}" # ToDo: HTMLタグを除去する & ""を除去する
 
     def format_item(self, split, item, htmls, cells, f):
         print(path(self.params.load.dir, split, item["filename"]), file=f)
