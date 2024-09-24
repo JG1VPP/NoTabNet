@@ -52,6 +52,7 @@ class TabNet:
     seq_len: Optional[SeqLen] = None
 
 
+# ToDo: メソッドの中身をutil functionに吐き出す (notab以下に)
 class TabNetParser(object):
     def __init__(self, params: TabNet):
         self.params = params
