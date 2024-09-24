@@ -17,6 +17,7 @@ def html_to_img(driver, html_content, id_count, table_id):
     '''converts html to image and bounding boxes of each cell'''
     counter=1                #This counter is to keep track of the exceptions and stop execution after 10 exceptions have occurred
     add_border_init = 5
+    # ToDo: このwhileループを除去する
     while(True):
         try:
             driver.get("data:text/html;charset=utf-8," + html_content)
@@ -71,6 +72,7 @@ def html_to_img(driver, html_content, id_count, table_id):
                     # print(str(im.size) + ":" + str([lentext,txt,xmin,ymin,xmax,ymax]) + " : " + str(table_id))
                     return im, None
 
+            # ToDo: bboxの部分画像を確認してさらにbounding boxを切り詰める
             return im, bboxes
         except Exception as e:
             raise e
